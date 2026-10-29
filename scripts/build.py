@@ -13,7 +13,7 @@ def branding(prefix='',footer=False):
  name='<span class="brand-name">Lolly Merrell</span>' if footer else '<h1 class="brand-name">Lolly Merrell</h1>'
  return f'<div class="site-branding"><a class="brand" href="{prefix or "./"}" aria-label="Lolly Merrell home">{name}<p class="site-description">Writer / Journalist / Editor</p></a></div>'
 
-def document(title,body,path='',prefix='',description='',image='assets/images/dolomites.webp',home=False):
+def document(title,body,path='',prefix='',description='',image='assets/images/dolomites.webp',home=False,article=False):
  name=e(title+' | Lolly Merrell' if title else 'Lolly Merrell | Writer, Journalist & Editor')
  desc=e(description or 'Lolly Merrell is a writer, journalist, and editor specializing in immersive reporting and narrative storytelling about science, the environment, travel, and compelling personalities.',quote=True)
  header=branding(prefix) if home else branding(prefix).replace('<h1 class="brand-name">','<span class="brand-name">').replace('</h1>','</span>')
@@ -26,7 +26,7 @@ def document(title,body,path='',prefix='',description='',image='assets/images/do
 <link rel="icon" href="{prefix}assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="{prefix}assets/styles.css">
 </head><body><a class="skip-link" href="#main">Skip to content</a>
 <header>{header}</header>{body}
-<footer class="site-footer">{branding(prefix,True)}<p class="copyright">© 2026 Lolly Merrell. All rights reserved.</p></footer>
+<footer class="site-footer">{"" if article else branding(prefix,True)}<p class="copyright">© 2026 Lolly Merrell. All rights reserved.</p></footer>
 </body></html>'''
 
 def card(a,prefix=''):
@@ -58,7 +58,7 @@ for i,a in enumerate(ARTICLES):
  prefix='../../';path=f'publications/{a["slug"]}/';category=NAMES[a['category']]
  prev=ARTICLES[(i-1)%len(ARTICLES)];nxt=ARTICLES[(i+1)%len(ARTICLES)]
  body=f'''<main id="main"><article class="article"><header><h1>{e(a['title'])}</h1><p class="article-byline">by Lolly Merrell | {e(a['publication'])}</p></header><div class="article-layout"><a class="article-preview" href="{prefix}{a['pdf']}" aria-label="View PDF of {e(a['title'])}"><img src="{prefix}{a['image']}" alt="Opening page of {e(a['title'])}" width="{a['image_width']}" height="{a['image_height']}"></a><div class="article-description"><p>{e(a['summary'])}</p><a class="btn" href="{prefix}{a['pdf']}">View PDF here »</a><span class="pdf-size">PDF · {a['mb']:.1f} MB</span><a href="{prefix}#{a['category']}">← Back to {category}</a></div></div><div class="tags"><a href="../category/{a['category']}/">{e(category)}</a></div></article><nav class="post-navigation" aria-label="Article navigation"><a href="../{prev['slug']}/">Previous: {e(prev['title'])}</a><a href="../{nxt['slug']}/">Next: {e(nxt['title'])}</a></nav></main>'''
- save(Path(path)/'index.html',document(a['title'],body,path,prefix,description=a['summary'],image=a['image']));paths.append(path)
+ save(Path(path)/'index.html',document(a['title'],body,path,prefix,description=a['summary'],image=a['image'],article=True));paths.append(path)
 body='<main class="page-width not-found" id="main"><h1>Page not found</h1><p>The page may have moved. Explore Lolly’s selected work or get in touch.</p><a class="btn" href="/">Return to the home page</a></main>'
 save(Path('404.html'),document('Page not found',body,prefix='/'))
 save(Path('sitemap.xml'),'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join(f'<url><loc>https://lollymerrell.com/{p}</loc></url>' for p in paths)+'</urlset>')
