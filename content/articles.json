@@ -250,5 +250,33 @@
     "image_height": 1000,
     "mb": 1.4,
     "source": "Science, environment and culture/Popular Mechanics, Taking CO Seriously.pdf"
+  },
+  {
+    "slug": "no-magic-bullet-for-wasting-disease",
+    "title": "No Magic Bullet for Wasting Disease",
+    "publication": "High Country News",
+    "category": "science-environment-and-culture",
+    "summary": "Reporting on the debate over culling deer and elk to control chronic wasting disease, and the scientific questions surrounding the strategy.",
+    "pdf": "assets/pdfs/no-magic-bullet-for-wasting-disease.pdf",
+    "image": "assets/images/no-magic-bullet-for-wasting-disease.webp",
+    "thumbnail": "assets/images/no-magic-bullet-for-wasting-disease-thumb.webp",
+    "image_width": 707,
+    "image_height": 1000,
+    "mb": 3.1,
+    "source": "Science, environment and culture/No Magic Bullet for Wasting Disease.pdf"
+  },
+  {
+    "slug": "the-condoms-among-us",
+    "title": "The Condoms Among Us",
+    "publication": "The Bear Deluxe",
+    "category": "science-environment-and-culture",
+    "summary": "A personal essay tracing discarded condoms from roadside litter to wastewater systems, rubber plantations, and the environmental footprint of latex.",
+    "pdf": "assets/pdfs/the-condoms-among-us.pdf",
+    "image": "assets/images/the-condoms-among-us.webp",
+    "thumbnail": "assets/images/the-condoms-among-us-thumb.webp",
+    "image_width": 707,
+    "image_height": 1000,
+    "mb": 1.7,
+    "source": "Science, environment and culture/The Condoms Among Us.pdf"
   }
 ]
