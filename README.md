@@ -1,45 +1,21 @@
-# Lolly Merrell — journalist portfolio
+# Lolly Merrell
 
-A lightweight static website for **https://lollymerrell.com**, hosted on GitHub Pages. No dependencies, build step, backend, analytics, or external fonts.
+A static journalist portfolio at https://lollymerrell.com, hosted on GitHub Pages from `main` and the repository root. No installation or framework is required. Keep `CNAME` and `.nojekyll` in place.
 
-## Enable deployment from main
+## Edit and rebuild
 
-1. Open this repository’s **Settings → Pages**.
-2. Under **Build and deployment**, choose **Deploy from a branch**.
-3. Select **main** and **/ (root)**, then save.
-4. Confirm **Custom domain** is `lollymerrell.com` (also tracked in `CNAME`).
-5. Once the DNS check and certificate finish, enable **Enforce HTTPS**.
+- The approved biography is in `scripts/build.py` (`BIO`).
+- Article titles, publication credits, summaries, and file paths are in `content/articles.json`.
+- Article PDFs are in `assets/pdfs/`; optimized previews and the Dolomites photograph are in `assets/images/`.
+- Shared styling is in `assets/styles.css`. Raleway and Josefin Sans are self-hosted with their OFL licenses in `assets/fonts/`.
+- Contact links open an email to `lollymerrell@yahoo.com`.
 
-Every push to `main` then publishes the site. No GitHub Actions workflow is needed for branch publishing. `.nojekyll` tells Pages to serve these files directly.
+Run `python3 scripts/build.py` after changing content. It regenerates the homepage, three category archives, 18 article pages, the 404 page, and the sitemap. Commit the generated pages along with content edits.
 
-## DNS at WordPress.com
+For a preview, run `python3 -m http.server 8000 --bind 127.0.0.1` here and open http://127.0.0.1:8000.
 
-Keep the existing WordPress.com nameservers. Root (`@`) A records should point to:
+## Design reference
 
-- `185.199.108.153`
-- `185.199.109.153`
-- `185.199.110.153`
-- `185.199.111.153`
+The design follows https://stephanieannpearson.com/: pale blue-gray background, navy and blue palette, Josefin Sans headings, Raleway body text, a biography over a blue photo banner on desktop, stacked photo and biography on smaller screens, labeled article cards, category pages, and article pages with PDF links and previous/next navigation. Lolly’s name uses bold Times New Roman as requested. All biography text and article materials are Lolly’s; no reference-site photographs, logos, or article copy are included.
 
-Set `www` CNAME to `dvansickle.github.io`. Preserve email and verification records. With the apex custom domain selected in Pages, GitHub redirects the configured www variant to the apex.
-
-## Local preview
-
-Run from the repository root:
-
-```sh
-python3 -m http.server 8000
-```
-
-Visit http://localhost:8000. Check desktop and narrow mobile layouts before pushing.
-
-## Files and future content
-
-- `index.html`: homepage, portfolio, about, and contact sections.
-- `assets/styles.css`: shared responsive styles.
-- `assets/favicon.svg`: initials favicon.
-- `404.html`: custom missing-page response.
-- `content/README.md`: content editing guidance.
-- `robots.txt` and `sitemap.xml`: basic search discovery.
-
-Inspired by the biography-first and portfolio structure of https://stephanieannpearson.com/. No text, images, or biographical claims from that site are reused. The initial page clearly marks content as forthcoming. Add approved copy, real articles, a portrait, and contact information when available.
+Raw source materials remain in the parent workspace outside this repository. Public article summaries are short editorial descriptions based on the supplied scans. Publication dates are omitted where not established. `Ski Cities` is credited to Snow Country, as printed in the supplied scan; `Southern Fried Skiing` is credited to Mountain Sports & Living, as printed in its scan. PDFs retain the supplied originals.
