@@ -8,10 +8,11 @@
     "pdf": "assets/pdfs/the-vanishing-world-of-lonnie-thompson.pdf",
     "image": "assets/images/the-vanishing-world-of-lonnie-thompson.webp",
     "thumbnail": "assets/images/the-vanishing-world-of-lonnie-thompson-thumb.webp",
-    "image_width": 707,
-    "image_height": 1000,
-    "mb": 1.2,
-    "source": "Profiles/The Vanishing World of Lonnie Thompson.pdf"
+    "image_width": 1062,
+    "image_height": 1400,
+    "mb": 7.6,
+    "source": "Replacement PDFs/CLEAN The Vanishing World of Lonnie Thompson.pdf",
+    "optimization": "Website copy: image resolution capped at 250 dpi; JPEG quality 82; source pages and existing searchable text preserved."
   },
   {
     "slug": "wild-things",
@@ -36,10 +37,11 @@
     "pdf": "assets/pdfs/whats-up-with-warren-miller.pdf",
     "image": "assets/images/whats-up-with-warren-miller.webp",
     "thumbnail": "assets/images/whats-up-with-warren-miller-thumb.webp",
-    "image_width": 707,
-    "image_height": 1000,
-    "mb": 7.4,
-    "source": "Profiles/Snow Country, Warren Miller.pdf"
+    "image_width": 1073,
+    "image_height": 1400,
+    "mb": 10.9,
+    "source": "Replacement PDFs/WM1.pdf",
+    "optimization": "Website copy: image resolution capped at 250 dpi; JPEG quality 82; source pages and existing searchable text preserved."
   },
   {
     "slug": "who-moi",
@@ -64,10 +66,11 @@
     "pdf": "assets/pdfs/cracked-earth.pdf",
     "image": "assets/images/cracked-earth.webp",
     "thumbnail": "assets/images/cracked-earth-thumb.webp",
-    "image_width": 707,
-    "image_height": 1000,
-    "mb": 3.5,
-    "source": "Profiles/Cracked Earth.pdf"
+    "image_width": 990,
+    "image_height": 1400,
+    "mb": 4.6,
+    "source": "Replacement PDFs/Cracked Earth 2.pdf",
+    "optimization": "Website copy: image resolution capped at 250 dpi; JPEG quality 82; source pages and existing searchable text preserved."
   },
   {
     "slug": "nevadas-alpine-oasis",
