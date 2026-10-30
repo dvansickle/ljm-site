@@ -7,7 +7,7 @@ ROOT=Path(__file__).resolve().parents[1]
 ARTICLES=json.loads((ROOT/'content/articles.json').read_text())
 CATEGORIES=[('profiles','Profiles'),('travel-and-adventure','Travel and Adventure'),('science-environment-and-culture','Science, Environment and Culture')]
 NAMES=dict(CATEGORIES)
-BIO='<p>Lolly Merrell is a writer, journalist, and editor specializing in immersive reporting and narrative storytelling about science, the environment, travel, and compelling personalities.</p><p>After earning her master’s degree from Northwestern University’s Medill School of Journalism, Merrell worked on staff at several publications, including <em>Outside</em>, <em>Snow Country</em>, and <em>High Country News</em>. Her reporting assignments have taken her to Rajasthani tiger country, underground caves in Belize, 16,000-ft-high glaciologists’ camp in Alaska, and the Rustic Roads of Wisconsin.</p>'
+BIO='<p>Lolly Merrell is a writer, journalist, and editor specializing in immersive reporting and narrative storytelling about science, the environment, travel, and compelling personalities.</p><p>After earning her master’s degree from Northwestern University’s Medill School of Journalism, Merrell worked on staff at several publications, including <em>Outside</em>, <em>Snow Country</em>, and <em>High Country News</em>. Her reporting assignments have taken her to Rajasthani tiger country, underground caves in Belize, a 16,000-ft-high glaciologists’ camp in Alaska, and the Rustic Roads of Wisconsin.</p>'
 
 def branding(prefix='',footer=False):
  name='<span class="brand-name">Lolly Merrell</span>' if footer else '<h1 class="brand-name">Lolly Merrell</h1>'
@@ -41,11 +41,10 @@ def save(path,html):
 sections=''
 for cat,title in CATEGORIES:
  subset=[a for a in ARTICLES if a['category']==cat]
- category_link='' if cat=='science-environment-and-culture' else f'<a class="btn category-link" href="publications/category/{cat}/">View All {title}</a>'
- sections+=f'<section class="work-category" id="{cat}" aria-labelledby="{cat}-title"><h3 id="{cat}-title">{title}</h3>{cards(subset)}{category_link}</section>'
-body=f'''<main id="main"><section class="hero" aria-label="About Lolly"><picture><img class="hero-image" src="assets/images/dolomites.webp" alt="A hiker descending a trail toward a mountain refuge beneath the Dolomites" width="1950" height="2600" fetchpriority="high"></picture><div class="hero-content"><div class="hero-copy">{BIO}<a class="btn btn-white" href="mailto:lollymerrell@yahoo.com">Contact Lolly</a></div></div></section>
+ sections+=f'<section class="work-category" id="{cat}" aria-labelledby="{cat}-title"><h3 id="{cat}-title">{title}</h3>{cards(subset)}</section>'
+body=f'''<main id="main"><section class="hero" aria-label="About Lolly"><picture><img class="hero-image" src="assets/images/dolomites.webp" alt="A hiker descending a trail toward a mountain refuge beneath the Dolomites" width="1950" height="2600" fetchpriority="high"></picture><div class="hero-content"><div class="hero-copy">{BIO}<a class="btn btn-white" href="mailto:lollymerrell@gmail.com">Contact Lolly</a></div></div></section>
 <div class="page-width"><section aria-labelledby="featured-title"><h2 class="publications-heading" id="featured-title">Featured Work</h2>{sections}</section></div>
-<section class="contact" id="contact" aria-labelledby="contact-title"><h2 id="contact-title">Contact</h2><a class="btn btn-white" href="mailto:lollymerrell@yahoo.com">Contact Lolly</a></section></main>'''
+<section class="contact" id="contact" aria-labelledby="contact-title"><h2 id="contact-title">Contact</h2><a class="btn btn-white" href="mailto:lollymerrell@gmail.com">Contact Lolly</a></section></main>'''
 save(Path('index.html'),document('',body,home=True))
 paths=['']
 for cat,title in CATEGORIES:
